@@ -1,51 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <title>Frontend Mentor | Interactive card details form</title>
+    <script src="https://unpkg.com/vue@3"></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
+
 <body>
+    <main>
+        <aside class="cards">
+            <div class="card card--front">
+                <span class="card__dot card__ot--bigger"></span>
+                <span class="card__dot card__dot--small"></span>
+                <p class="card__number">
+                    {{ cardNumber }}
+                </p>
+                <p class="card__onwer">
+                    {{ details }}
+                </p>
+                <p class="date">
+                    <span class="date__month">{{dateMonth}}</span> /
+                    <span class="date__year"> {{dateYear}} </span>
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+                </p>
+            </div>
+            <div class="card card--back">
+                <span class="card__magnet"></span>
+                <div class="card__sing">
+                    {{ cvc}}
+                </div>
 
-  000
+            </div>
+        </aside>
+        <section class="form">
 
-  Cardholder Name
-  e.g. Jane Appleseed
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+        </section>
+        0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC e.g. 123 Confirm
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+        <!-- Completed state start -->
 
-  CVC
-  e.g. 123
+        Thank you! We've added your card details Continue
 
-  Confirm
+        <div id="app">{{ message }}</div>
+        <div>
 
-  <!-- Completed state start -->
+        </div>
+    </main>
 
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
+<script>
+    const {
+        createApp
+    } = Vue
+
+    createApp({
+        data() {
+            return {
+                cardNumber: '',
+                details: '',
+                dateMonth: '',
+                dateYear: '',
+                cvc: ''
+
+            }
+        }
+    }).mount('#app')
+</script>
+
 </html>
