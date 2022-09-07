@@ -1,79 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- displays site properly based on user's device -->
-
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Frontend Mentor | Interactive card details form</title>
-    <script src="https://unpkg.com/vue@3"></script>
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-
-</head>
-
-<body>
-    <main>
-        <aside class="cards">
-            <div class="card card--front">
-                <span class="card__dot card__ot--bigger"></span>
-                <span class="card__dot card__dot--small"></span>
-                <p class="card__number">
-                    {{ cardNumber }}
-                </p>
-                <p class="card__onwer">
-                    {{ details }}
-                </p>
-                <p class="date">
-                    <span class="date__month">{{dateMonth}}</span> /
-                    <span class="date__year"> {{dateYear}} </span>
-
-                </p>
-            </div>
-            <div class="card card--back">
-                <span class="card__magnet"></span>
-                <div class="card__sing">
-                    {{ cvc}}
-                </div>
-
-            </div>
-        </aside>
-        <section class="form">
-
-
-        </section>
-        0000 0000 0000 0000 Jane Appleseed 00/00 000 Cardholder Name e.g. Jane Appleseed Card Number e.g. 1234 5678 9123 0000 Exp. Date (MM/YY) MM YY CVC e.g. 123 Confirm
-
-        <!-- Completed state start -->
-
-        Thank you! We've added your card details Continue
-
-        <div id="app">{{ message }}</div>
-        <div>
-
-        </div>
-    </main>
-
-</body>
-<script>
-    const {
-        createApp
-    } = Vue
-
-    createApp({
-        data() {
-            return {
-                cardNumber: '',
-                details: '',
-                dateMonth: '',
-                dateYear: '',
-                cvc: ''
-
-            }
-        }
-    }).mount('#app')
-</script>
-
+  </body>
 </html>
